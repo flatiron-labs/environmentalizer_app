@@ -1,0 +1,19 @@
+{
+  "name": "electron_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "backbone-validation": "^0.11.5",
+    "backbone.marionette": "^2.4.3",
+    "backbone.radio": "^1.0.2",
+    "spin.js": "^2.3.2",
+    "supermodel": "0.0.1"
+  }
+}
