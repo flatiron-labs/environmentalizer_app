@@ -17,21 +17,23 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
 
-  mainWindow.loadUrl('file://' + __dirname + '/public/index.html');
-
-  //mainWindow.openDevTools();
+  mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
+    app.quit();
   });
 });
 
 ipc.on('start-script', function(event, arg) {
   exec('~/Desktop/long_script.sh', function(error, stdout, stderr) {
     if (error !== null) {
-      event.sender.send('error-running-script', error);
+      event.sender.send('error-running-script', {error: error, stderr: stderr});
     } else {
       event.sender.send('success-running-script');
     }
