@@ -4,6 +4,7 @@ var app           = require('app')
   , spawn         = ChildProcess.spawn
   , exec          = ChildProcess.exec
   , ipc           = require('ipc')
+  , shell         = require('shell')
   , CrashReporter = require('crash-reporter')
   , mainWindow    = null
   ;
@@ -31,11 +32,15 @@ app.on('ready', function() {
 });
 
 ipc.on('start-script', function(event, arg) {
-  exec('~/Desktop/long_script.sh', function(error, stdout, stderr) {
+  exec('app/script/test_script.sh', function(error, stdout, stderr) {
     if (error !== null) {
       event.sender.send('error-running-script', {error: error, stderr: stderr});
     } else {
-      event.sender.send('success-running-script');
+      event.sender.send('success-running-script', stdout);
     }
   })
-})
+});
+
+ipc.on('open-file', function(event, arg) {
+  shell.openItem(arg);
+});
