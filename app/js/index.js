@@ -29,7 +29,6 @@ var MainView = Marionette.ItemView.extend({
     this.changeButton('success');
     this.ui.startButton.text('OPEN');
     this.ui.startButton.addClass('open');
-    debugger;
     this.model.set('fileLocation', stdout);
   },
 

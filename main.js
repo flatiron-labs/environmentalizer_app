@@ -32,7 +32,7 @@ app.on('ready', function() {
 });
 
 ipc.on('start-script', function(event, arg) {
-  exec('app/script/test_script.sh', function(error, stdout, stderr) {
+  exec(__dirname + '/app/script/test_script.sh', function(error, stdout, stderr) {
     if (error !== null) {
       event.sender.send('error-running-script', {error: error, stderr: stderr});
     } else {
