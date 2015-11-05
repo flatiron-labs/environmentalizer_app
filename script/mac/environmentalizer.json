@@ -13,7 +13,7 @@
     "passwordRequired": true
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "Homebrew",
     "description": "A package manager that makes it easy to install useful tools",
     "currentVersion": "2219f40",
