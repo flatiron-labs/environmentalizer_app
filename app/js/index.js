@@ -48,18 +48,18 @@ var MainView = Marionette.ItemView.extend({
   }
 });
 
-var indexModel = new MainModel();
-var indexView = new MainView({
-  el: '#main',
-  model: indexModel
-});
+//var indexModel = new MainModel();
+//var indexView = new MainView({
+  //el: '#main',
+  //model: indexModel
+//});
 
-indexView.render();
+//indexView.render();
 
-ipc.on('error-running-script', function(arg) {
-  indexView.triggerMethod('script:error', arg);
-});
+//ipc.on('error-running-script', function(arg) {
+  //indexView.triggerMethod('script:error', arg);
+//});
 
-ipc.on('success-running-script', function(arg) {
-  indexView.triggerMethod('script:success', arg);
-});
+//ipc.on('success-running-script', function(arg) {
+  //indexView.triggerMethod('script:success', arg);
+//});
