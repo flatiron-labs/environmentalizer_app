@@ -8,6 +8,8 @@
     "browserify": "./node_modules/.bin/watchify app/js/index.js -o ./app/js/bundle.js",
     "electron": "./node_modules/.bin/electron .",
     "start": "./node_modules/.bin/nf start",
+    "build-css": "./node_modules/.bin/node-sass --include-path app/scss app/scss/index.scss app/public/css/index.css",
+    "watch-css": "nodemon -e app/scss -x \"npm run build-css\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -30,8 +32,10 @@
   },
   "devDependencies": {
     "electron-prebuilt": "~0.34.2",
-    "watchify": "~3.6.0",
-    "foreman": "~1.4.1"
+    "foreman": "~1.4.1",
+    "node-sass": "^3.4.1",
+    "nodemon": "^1.8.1",
+    "watchify": "~3.6.0"
   },
   "browserify": {
     "transform": [
