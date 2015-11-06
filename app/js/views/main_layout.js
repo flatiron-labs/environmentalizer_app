@@ -3,9 +3,7 @@ var _          = require('underscore')
   ;
 
 var MainLayoutView = Marionette.LayoutView.extend({
-  template: function() {
-    return _.template("<div id='tools'></div>")({});
-  },
+  template: require('../templates/main_layout.jade'),
 
   regions: {
     tools: '#tools'

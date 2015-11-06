@@ -23,11 +23,19 @@
     "underscore": "1.8.x",
     "when": "3.7.x",
     "xhr": "2.1.x",
-    "bootstrap": "3.3.x"
+    "bootstrap": "3.3.x",
+    "jade": "~1.11.0",
+    "browserify": "~11.2.0",
+    "jadeify": "~4.4.0"
   },
   "devDependencies": {
     "electron-prebuilt": "~0.34.2",
     "watchify": "~3.6.0",
     "foreman": "~1.4.1"
+  },
+  "browserify": {
+    "transform": [
+      "jadeify"
+    ]
   }
 }
