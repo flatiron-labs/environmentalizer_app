@@ -6,7 +6,7 @@ var app           = require('app')
   , ipc           = require('ipc')
   , shell         = require('shell')
   , CrashReporter = require('crash-reporter')
-  , mainWindow    = null
+  , mainWindow
   ;
 
 CrashReporter.start();
