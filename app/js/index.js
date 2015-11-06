@@ -3,6 +3,7 @@ var ipc = electronRequire('ipc')
   , Tools          = require('./collections/tools')
   , MainLayoutView = require('./views/main_layout')
   , ToolsView      = require('./views/tools')
+  , TitleBarView   = require('./views/title_bar')
   ;
 
 
@@ -14,9 +15,12 @@ var toolsView = new ToolsView({
   collection: new Tools
 });
 
+var titleBarView = new TitleBarView({});
+
 mainLayout.render();
 
 mainLayout.showChildView('tools', toolsView);
+mainLayout.showChildView('title', titleBarView);
 
 //var MainView = Marionette.ItemView.extend({
   //template: false,

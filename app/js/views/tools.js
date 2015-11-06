@@ -1,6 +1,4 @@
-var _          = require('underscore')
-  , Marionette = require('backbone.marionette')
-  ;
+var Marionette = require('backbone.marionette');
 
 var ToolView = Marionette.ItemView.extend({
   template: require('../templates/tool.jade'),
