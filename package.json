@@ -5,7 +5,9 @@
   "main": "main.js",
   "browser": "src/app.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron .",
+    "browserify": "./node_modules/.bin/watchify app/js/index.js -o ./app/js/bundle.js",
+    "electron": "./node_modules/.bin/electron .",
+    "start": "./node_modules/.bin/nf start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -24,6 +26,8 @@
     "bootstrap": "3.3.x"
   },
   "devDependencies": {
-    "electron-prebuilt": "~0.34.2"
+    "electron-prebuilt": "~0.34.2",
+    "watchify": "~3.6.0",
+    "foreman": "~1.4.1"
   }
 }
