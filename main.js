@@ -1,15 +1,16 @@
-var app           = require('app')
-  , BrowserWindow = require('browser-window')
-  , ChildProcess  = require('child_process')
-  , spawn         = ChildProcess.spawn
-  , exec          = ChildProcess.exec
-  , ipc           = require('ipc')
-  , shell         = require('shell')
-  , CrashReporter = require('crash-reporter')
+var app                 = require('app')
+  , BrowserWindow       = require('browser-window')
+  , ipc                 = require('ipc')
+  , shell               = require('shell')
+  , CrashReporter       = require('crash-reporter')
+  , InstallationManager = require('./app/js/models/installation_manager')
+  , locus               = require('locus')
   , mainWindow
   ;
 
 CrashReporter.start();
+
+var installationManager = new InstallationManager;
 
 app.on('window-all-closed', function() {
   if (process.platform != 'darwin') {
@@ -32,6 +33,10 @@ app.on('ready', function() {
     mainWindow = null;
     app.quit();
   });
+});
+
+ipc.on('check-installations', function(event, arg) {
+  installationManager.checkInstallations({sender: event.sender, data: arg});
 });
 
 ipc.on('start-script', function(event, arg) {

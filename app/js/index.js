@@ -1,11 +1,16 @@
-var ipc = electronRequire('ipc')
-
+var ipc            = electronRequire('ipc')
   , Tools          = require('./collections/tools')
   , MainLayoutView = require('./views/main_layout')
   , ToolsView      = require('./views/tools')
   , TitleBarView   = require('./views/title_bar')
+  , EventManager   = require('./models/event_manager')
   ;
 
+var eventManager = new EventManager;
+
+ipc.on('check-installations-results', function(arg) {
+  eventManager.handleEvent({eventType: 'check-installations-results', results: arg});
+});
 
 var mainLayout = new MainLayoutView({
   el: '#main'

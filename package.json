@@ -33,6 +33,7 @@
   "devDependencies": {
     "electron-prebuilt": "~0.34.2",
     "foreman": "~1.4.1",
+    "locus": "^1.2.0",
     "node-sass": "^3.4.1",
     "nodemon": "^1.8.1",
     "watchify": "~3.6.0"
