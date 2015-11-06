@@ -5,6 +5,7 @@
   "main": "main.js",
   "browser": "src/app.js",
   "scripts": {
+    "start": "./node_modules/.bin/electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,5 +22,8 @@
     "when": "3.7.x",
     "xhr": "2.1.x",
     "bootstrap": "3.3.x"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "~0.34.2"
   }
 }
