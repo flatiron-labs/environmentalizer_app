@@ -17,8 +17,16 @@ var ToolsView = Marionette.CompositeView.extend({
 
   childViewContainer: 'ul.list-group',
 
+  initialize: function(opts) {
+    this.eventManager = opts.eventManager;
+  },
+
   onBeforeShow: function() {
-    this.collection.fetch();
+    this.collection.fetch({
+      success: function(collection, response, options) {
+        this.eventManager.checkInstallations(collection);
+      }.bind(this)
+    });
   }
 });
 

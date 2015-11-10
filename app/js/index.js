@@ -14,10 +14,13 @@ var mainLayout = new MainLayoutView({
 });
 
 var toolsView = new ToolsView({
-  collection: new Tools
+  collection: new Tools,
+  eventManager: eventManager
 });
 
-var titleBarView = new TitleBarView({});
+var titleBarView = new TitleBarView({
+  eventManager: eventManager
+});
 
 mainLayout.render();
 

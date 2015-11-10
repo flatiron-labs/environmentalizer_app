@@ -19,6 +19,10 @@ var EventManager = Backbone.Model.extend({
   handleInstallationCheckResults(args) {
     alert(args.results);
   },
+
+  checkInstallations: function(arg) {
+    ipc.send('check-installations', arg)
+  }
 });
 
 module.exports = EventManager;

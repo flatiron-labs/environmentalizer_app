@@ -13,8 +13,12 @@ var TitleBarView = Marionette.ItemView.extend({
     'click @ui.applyButton': 'onApplyButtonClick'
   },
 
+  initialize: function(opts) {
+    this.eventManager = opts.eventManager;
+  },
+
   onApplyButtonClick: function() {
-    ipc.send('check-installations', []);
+    this.eventManager.checkInstallations([]);
   }
 });
 

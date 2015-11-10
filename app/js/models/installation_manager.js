@@ -4,6 +4,7 @@ var Backbone     = require('backbone')
   , spawn        = ChildProcess.spawn
   , exec         = ChildProcess.exec
   , _            = require('underscore')
+  , Tool         = require('./tool')
   ;
 
 var InstallationManager = Backbone.Model.extend({
@@ -21,9 +22,13 @@ var InstallationManager = Backbone.Model.extend({
 
   checkInstallations: function(args) {
     var sender = args.sender;
-    var data   = args.data;
+    var tools  = args.data.models;
 
-    sender.send('check-installations-results', {'success': 'yep'});
+    _.each(tools, function(tool) {
+      tool = new Tool(tool.attributes);
+      console.log(tool.get('title'))
+      //sender.send('check-installations-results', {'success': 'yep'});
+    });
   }
 });
 

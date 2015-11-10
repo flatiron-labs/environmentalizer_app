@@ -24,3 +24,6 @@ h1.heading {
 
 ul.list-group li.list-group-item:first-child {
   padding-top: 64px; }
+
+.inline-block {
+  display: inline-block; }

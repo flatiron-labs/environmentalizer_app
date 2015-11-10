@@ -1,4 +1,9 @@
 img.img-circle.media-object.pull-left(src= 'public/img/test_avatar.png' width='32' height='32')
 .media-body
-  strong List item title
-  p Lorem ipsum dolor sit amet.
+  strong.title.inline-block= title
+  p.version.inline-block Pending
+  p.description.inline-block= description
+  .checkbox.inline-block
+    label
+      input.install(type='checkbox')
+      | Install
