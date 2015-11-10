@@ -89,5 +89,5 @@
     "deps": [1, 2],
     "sudoRequired": false,
     "passwordRequired": false
-  },
+  }
 ]
