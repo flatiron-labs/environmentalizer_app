@@ -1,9 +1,24 @@
-var Backbone = require('backbone');
+var Backbone = require('backbone')
+  , _        = require('underscore')
+  , ipc      = electronRequire('ipc')
+  ;
 
 var EventManager = Backbone.Model.extend({
-  handleEvent: function(args) {
-    alert(args.eventType + ': ' + args.results);
-  }
-})
+  ipcEvents: {
+    'check-installations-results': 'handleInstallationCheckResults'
+  },
+
+  start: function() {
+    _.each(this.ipcEvents, function(fun, e) {
+      ipc.on(e, function(arg) {
+        this[fun]({results: arg});
+      }.bind(this));
+    }.bind(this));
+  },
+
+  handleInstallationCheckResults(args) {
+    alert(args.results);
+  },
+});
 
 module.exports = EventManager;

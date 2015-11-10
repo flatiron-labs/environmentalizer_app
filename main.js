@@ -11,6 +11,7 @@ var app                 = require('app')
 CrashReporter.start();
 
 var installationManager = new InstallationManager;
+installationManager.start();
 
 app.on('window-all-closed', function() {
   if (process.platform != 'darwin') {
@@ -33,10 +34,6 @@ app.on('ready', function() {
     mainWindow = null;
     app.quit();
   });
-});
-
-ipc.on('check-installations', function(event, arg) {
-  installationManager.checkInstallations({sender: event.sender, data: arg});
 });
 
 ipc.on('start-script', function(event, arg) {

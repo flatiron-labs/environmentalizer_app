@@ -7,10 +7,7 @@ var ipc            = electronRequire('ipc')
   ;
 
 var eventManager = new EventManager;
-
-ipc.on('check-installations-results', function(arg) {
-  eventManager.handleEvent({eventType: 'check-installations-results', results: arg});
-});
+eventManager.start();
 
 var mainLayout = new MainLayoutView({
   el: '#main'
