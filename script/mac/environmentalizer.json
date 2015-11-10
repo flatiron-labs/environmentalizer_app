@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "title": "Homebrew",
-    "description": "A package manager that makes it easy to install useful tools",
-    "currentVersion": "2219f40",
-    "check": "mac/homebrew/check.sh",
-    "install": "mac/homebrew/install.sh",
-    "update": "mac/homebrew/update.sh",
-    "version": "mac/homebrew/version.sh",
+    "title": "Command Line Tools",
+    "description": "A collection of tools for development on OS X",
+    "currentVersion": "N/A",
+    "check": "mac/command_line_tools/check.sh",
+    "install": "mac/command_line_tools/install.sh",
+    "update": "mac/command_line_tools/update.sh",
+    "version": "mac/command_line_tools/version.sh",
     "deps": [],
     "sudoRequired": false,
-    "passwordRequired": true
+    "passwordRequired": false
   },
   {
     "id": 2,
@@ -21,8 +21,73 @@
     "install": "mac/homebrew/install.sh",
     "update": "mac/homebrew/update.sh",
     "version": "mac/homebrew/version.sh",
-    "deps": [],
+    "deps": [1],
     "sudoRequired": false,
     "passwordRequired": true
-  }
+  },
+  {
+    "id": 3,
+    "title": "Gmp",
+    "description": "A free math library",
+    "currentVersion": "6.0.0",
+    "check": "mac/gmp/check.sh",
+    "install": "mac/gmp/install.sh",
+    "update": "mac/gmp/update.sh",
+    "version": "mac/gmp/version.sh",
+    "deps": [1, 2],
+    "sudoRequired": false,
+    "passwordRequired": false
+  },
+  {
+    "id": 4,
+    "title": "Gpg",
+    "description": "A free implementation of the OpenPGP encryption standard",
+    "currentVersion": "1.4.19",
+    "check": "mac/gpg/check.sh",
+    "install": "mac/gpg/install.sh",
+    "update": "mac/gpg/update.sh",
+    "version": "mac/gpg/version.sh",
+    "deps": [1, 2],
+    "sudoRequired": false,
+    "passwordRequired": false
+  },
+  {
+    "id": 5,
+    "title": "RVM",
+    "description": "A tool to manage your Ruby and gem installations",
+    "currentVersion": "1.26.11",
+    "check": "mac/rvm/check.sh",
+    "install": "mac/rvm/install.sh",
+    "update": "mac/rvm/update.sh",
+    "version": "mac/rvm/version.sh",
+    "deps": [1, 2],
+    "sudoRequired": false,
+    "passwordRequired": false
+  },
+  {
+    "id": 6,
+    "title": "Ruby",
+    "description": "A dynamic, open source programming language",
+    "currentVersion": "2.2.3",
+    "check": "mac/ruby/check.sh",
+    "install": "mac/ruby/install.sh",
+    "update": "mac/ruby/update.sh",
+    "version": "mac/ruby/version.sh",
+    "deps": [1, 2, 3, 4, 5],
+    "sudoRequired": false,
+    "passwordRequired": true
+  },
+  {
+    "id": 7,
+    "title": "Git",
+    "description": "A free and open source distributed version control system",
+    "currentVersion": "2.6.2",
+    "check": "mac/git/check.sh",
+    "install": "mac/git/install.sh",
+    "update": "mac/git/update.sh",
+    "version": "mac/git/version.sh",
+    "deps": [1, 2],
+    "sudoRequired": false,
+    "passwordRequired": false
+  },
 ]
