@@ -5,19 +5,19 @@ var Backbone = require('backbone')
 
 var EventManager = Backbone.Model.extend({
   ipcEvents: {
-    'check-installations-results': 'handleInstallationCheckResults'
+    'check-installation-result': 'handleInstallationCheckResult'
   },
 
   start: function() {
     _.each(this.ipcEvents, function(fun, e) {
       ipc.on(e, function(arg) {
-        this[fun]({results: arg});
+        this[fun](arg);
       }.bind(this));
     }.bind(this));
   },
 
-  handleInstallationCheckResults(args) {
-    alert(args.results);
+  handleInstallationCheckResult(args) {
+    console.log(args.title + ': ' + args.result);
   },
 
   checkInstallations: function(arg) {

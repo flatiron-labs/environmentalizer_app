@@ -18,17 +18,19 @@
     "backbone": "1.2.x",
     "backbone.marionette": "2.4.x",
     "backbone.radio": "1.0.x",
+    "bootstrap": "3.3.x",
+    "browserify": "~11.2.0",
+    "jade": "~1.11.0",
+    "jadeify": "~4.4.0",
     "jquery": "2.1.x",
     "moment": "2.10.x",
     "spin.js": "2.3.x",
     "supermodel": "git://github.com/pathable/supermodel.git#086c220443c0fc2a78ed15f014a1e0573a2fcfb5",
+    "temp": "^0.8.3",
     "underscore": "1.8.x",
     "when": "3.7.x",
     "xhr": "2.1.x",
-    "bootstrap": "3.3.x",
-    "jade": "~1.11.0",
-    "browserify": "~11.2.0",
-    "jadeify": "~4.4.0"
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "electron-prebuilt": "~0.34.2",

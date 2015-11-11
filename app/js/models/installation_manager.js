@@ -26,8 +26,7 @@ var InstallationManager = Backbone.Model.extend({
 
     _.each(tools, function(tool) {
       tool = new Tool(tool.attributes);
-      console.log(tool.get('title'))
-      //sender.send('check-installations-results', {'success': 'yep'});
+      tool.checkInstallation({sender: sender});
     });
   }
 });

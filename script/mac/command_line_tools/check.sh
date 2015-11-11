@@ -2,7 +2,9 @@
 
 function are_command_line_tools_installed {
   xcode-select -p &>/dev/null
-  if [ $? -ne 0 ]; then
+  rc=$?
+
+  if [[ $rc != 0 ]]; then
     echo -n '0'
   else
     echo -n '1'
