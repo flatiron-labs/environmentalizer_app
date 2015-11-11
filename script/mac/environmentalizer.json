@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Command Line Tools",
+    "slug": "command_line_tools",
     "description": "A collection of tools for development on OS X",
     "currentVersion": "N/A",
     "check": "mac/command_line_tools/check.sh",
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "title": "Homebrew",
+    "slug": "homebrew",
     "description": "A package manager that makes it easy to install useful tools",
     "currentVersion": "2219f40",
     "check": "mac/homebrew/check.sh",
@@ -28,6 +30,7 @@
   {
     "id": 3,
     "title": "Gmp",
+    "slug": "gmp",
     "description": "A free math library",
     "currentVersion": "6.0.0",
     "check": "mac/gmp/check.sh",
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "title": "Gpg",
+    "slug": "gpg",
     "description": "A free implementation of the OpenPGP encryption standard",
     "currentVersion": "1.4.19",
     "check": "mac/gpg/check.sh",
@@ -54,6 +58,7 @@
   {
     "id": 5,
     "title": "RVM",
+    "slug": "rvm",
     "description": "A tool to manage your Ruby and gem installations",
     "currentVersion": "1.26.11",
     "check": "mac/rvm/check.sh",
@@ -67,6 +72,7 @@
   {
     "id": 6,
     "title": "Ruby",
+    "slug": "ruby",
     "description": "A dynamic, open source programming language",
     "currentVersion": "2.2.3",
     "check": "mac/ruby/check.sh",
@@ -80,6 +86,7 @@
   {
     "id": 7,
     "title": "Git",
+    "slug": "git",
     "description": "A free and open source distributed version control system",
     "currentVersion": "2.6.2",
     "check": "mac/git/check.sh",
