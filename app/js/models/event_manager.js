@@ -18,8 +18,6 @@ var EventManager = Backbone.Model.extend({
 
   handleInstallationCheckResult(args) {
     console.log(args.title + ': ' + args.result);
-    console.log(args.error);
-    console.log(args.stderr);
   },
 
   checkInstallations: function(arg) {

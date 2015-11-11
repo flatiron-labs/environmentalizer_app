@@ -24,13 +24,13 @@ var Tool = Backbone.Model.extend({
       if (req.readyState == 4 && req.status == 200) {
         temp.track();
 
-        temp.mkdir(this.get('title'), function(err, dirPath) {
+        temp.mkdir(this.get('slug'), function(err, dirPath) {
           var filePath = path.join(dirPath, 'check.sh');
 
           fs.writeFile(filePath, req.responseText, function(err) {
             fs.chmodSync(filePath, '0755');
             exec(filePath, function(error, stdout, stderr) {
-              sender.send('check-installation-result', {title: title, result: stdout, error: error, stderr: stderr});
+              sender.send('check-installation-result', {title: title, result: stdout});
             });
           });
         });
