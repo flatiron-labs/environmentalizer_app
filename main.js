@@ -28,7 +28,6 @@ app.on('ready', function() {
     center: true
   });
 
-  mainWindow.openDevTools();
   mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
 
   mainWindow.on('closed', function() {

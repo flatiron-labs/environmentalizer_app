@@ -1,6 +1,7 @@
 var Backbone = require('backbone')
   , _        = require('underscore')
   , ipc      = electronRequire('ipc')
+  , radio    = require('../lib/radio')
   ;
 
 var EventManager = Backbone.Model.extend({
@@ -17,7 +18,7 @@ var EventManager = Backbone.Model.extend({
   },
 
   handleInstallationCheckResult(args) {
-    console.log(args.title + ': ' + args.result);
+    radio.trigger('installation:check-result', args);
   },
 
   checkInstallations: function(arg) {

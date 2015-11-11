@@ -17,7 +17,7 @@
   "dependencies": {
     "backbone": "1.2.x",
     "backbone.marionette": "2.4.x",
-    "backbone.radio": "1.0.x",
+    "backbone.radio": "^1.0.2",
     "bootstrap": "3.3.x",
     "browserify": "~11.2.0",
     "jade": "~1.11.0",

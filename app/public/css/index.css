@@ -27,3 +27,9 @@ ul.list-group li.list-group-item:first-child {
 
 .inline-block {
   display: inline-block; }
+
+.not-installed {
+  color: red; }
+
+.installed {
+  color: green; }
